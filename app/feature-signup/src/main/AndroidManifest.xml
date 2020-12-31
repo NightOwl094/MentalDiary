@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nightowl094.feature_signup">
+
+    <application>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:theme="@style/signup_style" />
+    </application>
+
+</manifest>
