@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".fragments.SignUpStep1Fragment">
+    tools:context=".pages.step1.fragments.SignUpStep1Fragment">
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -159,6 +159,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:alpha="0.4"
         android:padding="8dp"
         android:text="@string/signUpStep1_pageNumber"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"

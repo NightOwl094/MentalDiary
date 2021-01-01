@@ -2,6 +2,5 @@
 <resources>
     <style name="signup_style" parent="Theme.MentalDiary">
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 </resources>

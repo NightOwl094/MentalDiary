@@ -1,4 +1,4 @@
-package com.nightowl094.feature_signup.fragments
+package com.nightowl094.feature_signup.pages.step1.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,15 +13,22 @@ import com.nightowl094.mylibrary.functions.getActivityViewModel
 class SignUpStep1Fragment : Fragment() {
 
     private val act by lazy { activity as? SignUpActivity }
-    private val delegate by lazy { SignUpStep1FragmentDelegate(binding, vm) }
+    private val delegate by lazy { SignUpStep1FragmentDelegate(binding!!, vm) }
     private val vm by lazy { getActivityViewModel<SignUpStep1ViewModel>() }
-    private lateinit var binding: FragmentSignUpStep1Binding
+    private var binding: FragmentSignUpStep1Binding? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return FragmentSignUpStep1Binding.inflate(layoutInflater).apply {
-            binding = this
-        }.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        return createBinding()
     }
+
+    private fun createBinding() =
+        binding?.run {
+            this.root
+        } ?: run {
+            FragmentSignUpStep1Binding.inflate(layoutInflater).apply {
+                binding = this
+            }.root
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

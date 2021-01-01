@@ -1,9 +1,10 @@
-package com.nightowl094.feature_signup.fragments
+package com.nightowl094.feature_signup.pages.step1.fragments
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.view.View
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.nightowl094.feature_signup.R
 import com.nightowl094.feature_signup.databinding.FragmentSignUpStep1Binding
 import com.nightowl094.feature_signup.view_models.SignUpStep1ViewModel
@@ -89,7 +90,7 @@ class SignUpStep1FragmentDelegate(
 
     private fun setUpNextPageButton() {
         binding.cvNextPage.setOnClickListener {
-            Toast.makeText(it.context, "next page", Toast.LENGTH_SHORT).show()
+            it.findNavController().navigate(R.id.action_signUpStep1Fragment_to_signUpStep2Fragment)
         }
     }
 
