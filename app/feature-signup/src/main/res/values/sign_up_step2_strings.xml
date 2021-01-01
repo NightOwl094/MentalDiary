@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signUpStep2_header">어떤 이야기에 관심 있으세요?</string>
+    <string name="signUpStep2_next">다음 단계</string>
+    <string name="signUpStep2_pageNumber">2/3</string>
+
+</resources>
