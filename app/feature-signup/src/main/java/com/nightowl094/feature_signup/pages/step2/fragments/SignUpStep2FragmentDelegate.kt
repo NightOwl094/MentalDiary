@@ -2,10 +2,11 @@ package com.nightowl094.feature_signup.pages.step2.fragments
 
 import android.graphics.Rect
 import android.view.View
-import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.nightowl094.feature_signup.R
 import com.nightowl094.feature_signup.databinding.FragmentSignUpStep2Binding
 import com.nightowl094.feature_signup.pages.step2.adapters.InterestsHeaderAdapter
 import com.nightowl094.feature_signup.pages.step2.adapters.InterestsItemAdapter
@@ -14,6 +15,7 @@ import com.nightowl094.mylibrary.functions.convertPx
 class SignUpStep2FragmentDelegate(
     private val binding: FragmentSignUpStep2Binding
 ) {
+    var isInit = false
 
     fun setUpUi() {
         setUpRecyclerView()
@@ -48,8 +50,8 @@ class SignUpStep2FragmentDelegate(
     }
 
     private fun setUpNextPageButton() {
-        binding.tvNextPage.setOnClickListener {
-            Toast.makeText(it.context, "next page", Toast.LENGTH_SHORT).show()
+        binding.btnNextPage.setOnClickListener {
+            it.findNavController().navigate(R.id.action_signUpStep2Fragment_to_signUpStep3Fragment)
         }
     }
 
@@ -63,8 +65,8 @@ class SignUpStep2FragmentDelegate(
 
     private fun updateNextPageButtonVisibility(isEnable: Boolean) {
         if (isEnable)
-            binding.tvNextPage.visibility = View.VISIBLE
+            binding.clNextPageContainer.visibility = View.VISIBLE
         else
-            binding.tvNextPage.visibility = View.GONE
+            binding.clNextPageContainer.visibility = View.GONE
     }
 }

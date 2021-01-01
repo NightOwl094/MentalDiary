@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="MentalDiary.app" target="11" />
+      <module name="MentalDiary.app.component" target="11" />
       <module name="MentalDiary.app.data" target="11" />
       <module name="MentalDiary.app.feature-signup" target="11" />
       <module name="MentalDiary.app.library" target="11" />

@@ -9,21 +9,32 @@ import com.nightowl094.feature_signup.databinding.FragmentSignUpStep2Binding
 
 class SignUpStep2Fragment : Fragment() {
 
-    private val delegate by lazy { SignUpStep2FragmentDelegate(binding) }
-    private lateinit var binding: FragmentSignUpStep2Binding
+    private val delegate by lazy { SignUpStep2FragmentDelegate(binding!!) }
+    private var binding: FragmentSignUpStep2Binding? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return FragmentSignUpStep2Binding.inflate(layoutInflater).apply {
-            binding = this
-        }.root
+        return createBinding()
     }
+
+    private fun createBinding() =
+        binding?.run {
+            this.root
+        } ?: run {
+            FragmentSignUpStep2Binding.inflate(layoutInflater).apply {
+                binding = this
+            }.root
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        delegate.setUpUi()
+        if (delegate.isInit.not()) {
+            delegate.setUpUi()
+            delegate.initRecyclerViewAdapter()
 
-        delegate.initRecyclerViewAdapter()
+            delegate.isInit = true
+        }
+
     }
 
 }

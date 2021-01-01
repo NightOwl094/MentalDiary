@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources>a68d6f
+    <color name="primary_color">#bfae99</color>
+    <color name="primary_variant_color">#a68d6f</color>
+    <color name="secondary_color">#8c694a</color>
+    <color name="secondary_variant_color">#260c03</color>
+    <color name="accent_color">#260c03</color>
+
+
     <color name="hint_color">@color/gray_400</color>
     <color name="disabled_color">@color/gray_400</color>
 </resources>

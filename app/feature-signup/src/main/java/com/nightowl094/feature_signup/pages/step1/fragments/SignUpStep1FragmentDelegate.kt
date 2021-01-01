@@ -89,7 +89,7 @@ class SignUpStep1FragmentDelegate(
     }
 
     private fun setUpNextPageButton() {
-        binding.cvNextPage.setOnClickListener {
+        binding.btnNextPage.setOnClickListener {
             it.findNavController().navigate(R.id.action_signUpStep1Fragment_to_signUpStep2Fragment)
         }
     }
@@ -106,7 +106,7 @@ class SignUpStep1FragmentDelegate(
 
     private fun conditionalUpdateNextPageButtonState() {
         if (binding.tvBirthDay.isSelected and binding.tvGender.isSelected)
-            binding.cvNextPage.visibility = View.VISIBLE
+            binding.clNextPageContainer.visibility = View.VISIBLE
     }
 
     fun startPageInitializeAnimation() {

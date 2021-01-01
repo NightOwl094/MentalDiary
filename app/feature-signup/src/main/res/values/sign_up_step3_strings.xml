@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signUpStep3_title">계정을 등록해주세요</string>
+    <string name="signUpStep3_caption">작성하신 글을 찾기위해 계정이 필요해요</string>
+    <string name="signUpStep3_emailHint">이메일 입력</string>
+    <string name="signUpStep3_passwordHint">비밀번호 입력</string>
+    <string name="signUpStep3_passwordConfirmHint">비밀번호 확인</string>
+    <string name="signUpStep3_start">시작하기</string>
+    <string name="signUpStep3_lazyInput">나중에 입력할래요</string>
+    <string name="signUpStep3_pageNumber">3/3</string>
+
+    <string name="signUpStep3_isNotValidEmail">유효하지 않은 이메일 주소입니다</string>
+    <string name="signUpStep3_isNotValidPassword">8자 이상의 영문 대소문자, 숫자, 특수문자를 포함하여 작성해주세요</string>
+    <string name="signUpStep3_isNotMatchedPassword">비밀번호가 일치하지 않습니다</string>
+</resources>

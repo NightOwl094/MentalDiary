@@ -20,7 +20,6 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,13 +34,15 @@ class SignUpActivity : AppCompatActivity() {
                     setUpProgressbar()
                 R.id.signUpStep2Fragment ->
                     updateProgressbarState(60)
+                R.id.signUpStep3Fragment ->
+                    updateProgressbarState(95)
             }
         }
     }
 
     private fun setUpProgressbar() {
         binding.progressBar2.apply {
-            ObjectAnimator.ofInt(this, "progress", 0, 30).apply {
+            ObjectAnimator.ofInt(this, "progress", binding.progressBar2.progress, 30).apply {
                 duration = 1000
                 interpolator = AccelerateDecelerateInterpolator()
                 addListener(object : Animator.AnimatorListener {

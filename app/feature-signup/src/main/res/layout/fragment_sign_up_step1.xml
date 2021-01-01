@@ -130,30 +130,6 @@
             app:drawableTopCompat="@drawable/ic_iconmonstr_gender_woman" />
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_nextPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:visibility="gone"
-        app:cardElevation="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pageNumber"
-        app:layout_constraintEnd_toStartOf="@id/pivot_outsideRight"
-        tools:visibility="visible">
-
-        <TextView
-            android:id="@+id/tv_nextPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="4dp"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/signUpStep1_next"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24_black" />
-    </com.google.android.material.card.MaterialCardView>
-
     <TextView
         android:id="@+id/tv_pageNumber"
         android:layout_width="wrap_content"
@@ -166,13 +142,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Space
-        android:id="@+id/pivot_outsideRight"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_nextPageContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#ddffffff"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_nextPage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/signUpStep2_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLeft"

@@ -14,7 +14,7 @@
         android:paddingEnd="8dp"
         android:paddingBottom="16dp"
         android:text="@string/signUpStep2_header"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

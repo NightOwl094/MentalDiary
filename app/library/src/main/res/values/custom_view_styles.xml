@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 카드뷰 컨테이너 텍스트 인풋 레이아웃 스타일 -->
+    <style name="textInputLayout_cardView_style" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxBackgroundColor">@color/color_selector_enabled_white</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeColor">@null</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:background">#ffffff</item>
+        <item name="hintEnabled">false</item>
+        <item name="counterTextAppearance">@style/TextAppearance.MaterialComponents.Caption</item>
+    </style>
+</resources>
