@@ -3,15 +3,15 @@ package com.nightowl094.feature_signup.pages.step1.fragments
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.findNavController
+import com.nightowl094.domain.constants.GenderTypes
 import com.nightowl094.feature_signup.R
 import com.nightowl094.feature_signup.databinding.FragmentSignUpStep1Binding
-import com.nightowl094.feature_signup.view_models.SignUpStep1ViewModel
+import com.nightowl094.feature_signup.view_models.SignUpActivityViewModel
 
 class SignUpStep1FragmentDelegate(
     private val binding: FragmentSignUpStep1Binding,
-    private val vm: SignUpStep1ViewModel
+    private val vm: SignUpActivityViewModel
 ) {
     private val createDatePickerDialog
         get() = vm.run {
@@ -64,7 +64,7 @@ class SignUpStep1FragmentDelegate(
                     isSelected = true
                     this.compoundDrawableTintList = it.context.getColorStateList(R.color.color_selector_man)
                 }
-                vm.gender = true
+                vm.gender = GenderTypes.MAN.ordinal
 
                 conditionalUpdateNextPageButtonState()
             }
@@ -81,7 +81,7 @@ class SignUpStep1FragmentDelegate(
                     isSelected = true
                     this.compoundDrawableTintList = it.context.getColorStateList(R.color.color_selector_woman)
                 }
-                vm.gender = false
+                vm.gender = GenderTypes.WOMAN.ordinal
 
                 conditionalUpdateNextPageButtonState()
             }

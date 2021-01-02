@@ -1,14 +1,15 @@
 package com.nightowl094.feature_signup.pages.step3
 
+import android.util.Log
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.nightowl094.feature_signup.R
 import com.nightowl094.feature_signup.databinding.FragmentSignUpStep3Binding
-import com.nightowl094.feature_signup.view_models.SignUpStep3ViewModel
+import com.nightowl094.feature_signup.view_models.SignUpActivityViewModel
 
 class SignUpStep3FragmentDelegate(
     private val binding: FragmentSignUpStep3Binding,
-    private val vm: SignUpStep3ViewModel
+    private val vm: SignUpActivityViewModel
 ) {
 
     fun setUpUi() {
@@ -35,6 +36,12 @@ class SignUpStep3FragmentDelegate(
             }
 
             updateStartButtonState(vm.isEnabledButton)
+        }
+
+        binding.etEmail.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus.not()) {
+                vm.checkValidationToEmail(vm.email)
+            }
         }
     }
 
@@ -80,7 +87,7 @@ class SignUpStep3FragmentDelegate(
 
     private fun setUpStartButton() {
         binding.startButton.setOnClickListener {
-            Toast.makeText(it.context, "started", Toast.LENGTH_SHORT).show()
+            vm.requestSignUp(vm.createUser)
         }
     }
 
@@ -88,6 +95,14 @@ class SignUpStep3FragmentDelegate(
 
     private fun updateStartButtonState(isEnable: Boolean) {
         binding.startButton.isEnabled = isEnable
+    }
+
+    fun showEmailContainerError(isEnable: Boolean, msg: String) {
+        if (isEnable) {
+            binding.tilEmail.error = msg
+        } else {
+            binding.tilEmail.error = null
+        }
     }
 
 }

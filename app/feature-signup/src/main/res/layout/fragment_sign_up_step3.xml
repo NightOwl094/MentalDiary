@@ -56,7 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@null"
                 android:drawableStart="@drawable/ic_baseline_email_24_state"
                 android:drawablePadding="16dp"
@@ -82,7 +82,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_pw"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@null"
                 android:drawableStart="@drawable/drawable_selector_lock_state"
                 android:drawablePadding="16dp"
@@ -108,7 +108,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_pwConfirm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@null"
                 android:drawableStart="@drawable/drawable_selector_lock_state"
                 android:drawablePadding="16dp"
@@ -119,38 +119,49 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/startButton"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="@string/signUpStep3_start"
-            app:layout_constraintBottom_toTopOf="@+id/tv_lazyInput"
+            android:layout_marginTop="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideRight"
-            app:layout_constraintStart_toStartOf="@+id/guideLeft" />
+            app:layout_constraintStart_toStartOf="@+id/guideLeft"
+            app:layout_constraintTop_toBottomOf="@+id/til_pwConfirm"
+            app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/tv_lazyInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:padding="8dp"
-            android:text="@string/signUpStep3_lazyInput"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideLeft" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/signUpStep3_start"
+                app:layout_constraintBottom_toTopOf="@+id/tv_lazyInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_pageNumber3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:alpha="0.4"
-            android:padding="8dp"
-            android:text="@string/signUpStep3_pageNumber"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideRight" />
+            <TextView
+                android:id="@+id/tv_lazyInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:text="@string/signUpStep3_lazyInput"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_pageNumber3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.4"
+                android:padding="8dp"
+                android:text="@string/signUpStep3_pageNumber"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideTop"
